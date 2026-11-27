@@ -1,0 +1,1119 @@
+/* ==========================================================================
+   Suvaikoodu – A Nest of Flavours
+   Royal Heritage Indian Mithai & Luxury Artisan Bakery Stylesheet
+   ========================================================================== */
+
+:root {
+  --plum-950: #14001b;
+  --plum-900: #1e0026;
+  --plum-800: #290035;
+  --plum-700: #360044;
+  --plum-600: #4a005c;
+
+  --gold-bright: #ffd700;
+  --gold-royal: #d4af37;
+  --gold-cream: #f5e1a4;
+  --gold-deep: #9f7918;
+
+  --peacock-500: #00a878;
+  --peacock-600: #00825d;
+
+  --ivory-50: #fffdf8;
+  --ivory-100: #fff9f0;
+  --ivory-200: #f4ead8;
+  --ink-plum: #24002e;
+  --ink-muted: #5c3a66;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --border-gold-hairline: 1px solid rgba(212, 175, 55, 0.28);
+  --border-plum-hairline: 1px solid rgba(36, 0, 46, 0.12);
+}
+
+/* Base & Typography */
+html {
+  scroll-behavior: auto !important; /* Handled exclusively by Lenis */
+  font-size: 16px;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--plum-900);
+  color: var(--ivory-100);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accessible Focus Rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+/* Metallic Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(120deg, #f5e1a4 0%, #ffd700 40%, #d4af37 72%, #fff3c4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   Cinematic Preloader
+   ========================================================================== */
+.preloader-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, var(--plum-700) 0%, var(--plum-950) 80%);
+  transition: opacity 0.65s var(--ease-luxury), visibility 0.65s var(--ease-luxury);
+}
+
+.preloader-curtain.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-curtain.is-hidden .preloader-logo-halo {
+  animation: none;
+}
+
+.preloader-logo-halo {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(255, 215, 0, 0) 70%);
+  animation: preloaderPulse 1.8s ease-in-out infinite;
+}
+
+.preloader-logo-img {
+  width: min(260px, 64vw);
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
+}
+
+.preloader-progress-track {
+  width: 180px;
+  height: 2px;
+  margin-top: 1.5rem;
+  background: rgba(245, 225, 164, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.preloader-progress-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-royal), var(--gold-bright), var(--gold-cream));
+  transform-origin: left center;
+  animation: preloaderFill 0.9s var(--ease-luxury) forwards;
+}
+
+@keyframes preloaderPulse {
+  0%, 100% { transform: scale3d(1, 1, 1); opacity: 0.92; }
+  50% { transform: scale3d(1.03, 1.03, 1); opacity: 1; }
+}
+
+@keyframes preloaderFill {
+  from { transform: scale3d(0, 1, 1); }
+  to { transform: scale3d(1, 1, 1); }
+}
+
+/* ==========================================================================
+   Glassmorphic Sticky Navbar (Only Element Using Backdrop Blur)
+   ========================================================================== */
+.royal-navbar {
+  position: fixed;
+  height: 110px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: rgba(24, 0, 32, 0.84);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+  transition: background-color 0.22s ease, border-color 0.22s ease;
+}
+
+.royal-navbar.is-scrolled {
+  background: rgba(20, 0, 27, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: rgba(212, 175, 55, 0.38);
+}
+
+.brand-logo-thumb {
+  height: 84px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.28);
+  border: 1px solid rgba(212, 175, 55, 0.52);
+}
+
+.brand-logo-thumb-footer {
+  height: 84px;
+  border-radius: 12px;
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.58);
+}
+
+@media (min-width: 576px) {
+  .brand-logo-thumb {
+    height: 84px;
+  }
+
+  .brand-logo-thumb-footer {
+    height: 84px;
+  }
+}
+
+.nav-gold-link {
+  position: relative;
+  color: var(--gold-cream);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 0.35rem 0;
+  transition: color 0.18s ease;
+}
+
+.nav-gold-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--gold-royal), var(--gold-bright));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s var(--ease-luxury);
+}
+
+.nav-gold-link:hover,
+.nav-gold-link:focus-visible {
+  color: var(--gold-bright);
+}
+
+.nav-gold-link:hover::after,
+.nav-gold-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Primary & Secondary Gold Buttons */
+.btn-royal-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 55%, #f5e1a4 100%);
+  color: #1e0026;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  padding: 0.72rem 1.5rem;
+  border: 1px solid rgba(255, 243, 196, 0.75);
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease-luxury), opacity 0.18s ease;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.24);
+}
+
+.btn-royal-gold:hover {
+  color: #14001b;
+  opacity: 0.96;
+  transform: translate3d(0, -1px, 0);
+}
+
+.btn-royal-gold:active {
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-royal-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(54, 0, 68, 0.45);
+  color: var(--gold-cream);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.72rem 1.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s var(--ease-luxury);
+}
+
+.btn-royal-outline:hover {
+  background: rgba(212, 175, 55, 0.14);
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  transform: translate3d(0, -1px, 0);
+}
+
+/* Mobile Nav Collapse Drawer */
+.mobile-nav-drawer {
+  background: rgba(20, 0, 27, 0.97);
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--gold-cream);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.mobile-nav-link:hover {
+  color: var(--gold-bright);
+}
+
+/* ==========================================================================
+   Grand Hero Section & Signature Laddu Showcase
+   ========================================================================== */
+.hero-royal {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 6.25rem;
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 75% 65% at 72% 48%, rgba(78, 0, 98, 0.72) 0%, rgba(30, 0, 38, 0) 70%),
+    radial-gradient(ellipse 65% 60% at 20% 25%, rgba(54, 0, 68, 0.85) 0%, rgba(20, 0, 27, 1) 75%),
+    var(--plum-900);
+}
+
+.hero-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content-layer {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-cream);
+}
+
+.hero-title {
+  font-size: clamp(2.65rem, 4.8vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  color: var(--gold-cream);
+}
+
+.hero-lead {
+  color: rgba(255, 249, 240, 0.88);
+  font-size: 1.05rem;
+  line-height: 1.68;
+  max-width: 52ch;
+}
+
+.hero-meta-strip {
+  border-top: 1px solid rgba(212, 175, 55, 0.24);
+  padding-top: 1.25rem;
+  color: rgba(245, 225, 164, 0.9);
+  font-size: 0.875rem;
+}
+
+.ambient-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 40px;
+  padding: 0.45rem 0.95rem;
+  border-radius: 10px;
+  background: rgba(20, 0, 27, 0.62);
+  border: 1px solid rgba(212, 175, 55, 0.36);
+  color: var(--gold-cream);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ambient-audio-btn:hover {
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  background: rgba(54, 0, 68, 0.72);
+}
+
+.ambient-audio-btn[aria-pressed="true"] {
+  border-color: rgba(255, 215, 0, 0.72);
+  background: rgba(212, 175, 55, 0.14);
+  color: var(--gold-bright);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.16);
+}
+
+.ambient-audio-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 13px;
+}
+
+.ambient-audio-bars span {
+  display: block;
+  width: 2.5px;
+  height: 5px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.7;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.ambient-audio-bars span:nth-child(2) {
+  height: 10px;
+}
+
+.ambient-audio-bars span:nth-child(3) {
+  height: 7px;
+}
+
+.ambient-audio-btn[aria-pressed="true"] .ambient-audio-bars span {
+  opacity: 1;
+  animation: soundBarPulse 1.35s ease-in-out infinite;
+}
+
+.ambient-audio-btn[aria-pressed="true"] .ambient-audio-bars span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.ambient-audio-btn[aria-pressed="true"] .ambient-audio-bars span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes soundBarPulse {
+  0%, 100% { transform: scaleY(0.55); }
+  50% { transform: scaleY(1.15); }
+}
+
+/* Centerpiece Royal Laddu Stage */
+.laddu-showcase-stage {
+  position: relative;
+  width: min(470px, 84vw);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1100px;
+}
+
+@media (max-width: 991.98px) {
+  .hero-royal {
+    min-height: auto;
+    padding-top: 4.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-lead {
+    font-size: 0.96rem;
+    line-height: 1.56;
+  }
+
+  .hero-meta-strip {
+    padding-top: 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .laddu-showcase-stage {
+    width: min(275px, 72vw);
+  }
+}
+
+.laddu-ambient-glow {
+  position: absolute;
+  inset: 2%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.22) 0%,
+    rgba(212, 175, 55, 0.09) 42%,
+    rgba(212, 175, 55, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.laddu-mandala-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform;
+  animation: mandalaSpin 42s linear infinite;
+}
+
+.laddu-mandala-ring-inner {
+  position: absolute;
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  pointer-events: none;
+  will-change: transform;
+  animation: mandalaSpinReverse 28s linear infinite;
+}
+
+@keyframes mandalaSpin {
+  from { transform: rotate3d(0, 0, 1, 0deg); }
+  to { transform: rotate3d(0, 0, 1, 360deg); }
+}
+
+@keyframes mandalaSpinReverse {
+  from { transform: rotate3d(0, 0, 1, 360deg); }
+  to { transform: rotate3d(0, 0, 1, 0deg); }
+}
+
+.laddu-levitate-wrap {
+  position: relative;
+  width: 72%;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  padding: 6px;
+  background: conic-gradient(from 0deg, #ffd700, #9f7918, #f5e1a4, #d4af37, #ffd700);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.56);
+  will-change: transform;
+  animation: ladduLevitate 5.4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes ladduLevitate {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
+}
+
+.laddu-photo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: var(--plum-950);
+}
+
+.laddu-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale3d(1.06, 1.06, 1);
+  transition: transform 0.5s var(--ease-luxury);
+}
+
+.laddu-showcase-stage:hover .laddu-photo {
+  transform: scale3d(1.11, 1.11, 1);
+}
+
+/* Subtle Golden Light-Sweep Shimmer */
+.laddu-light-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 243, 196, 0.26) 48%,
+    rgba(255, 215, 0, 0.12) 54%,
+    transparent 72%
+  );
+  transform: translate3d(-120%, 0, 0);
+  animation: ladduSweep 5.5s ease-in-out infinite;
+}
+
+@keyframes ladduSweep {
+  0%, 58% { transform: translate3d(-120%, 0, 0); }
+  88%, 100% { transform: translate3d(130%, 0, 0); }
+}
+
+/* Orbiting Saffron, Pistachio & Gold Leaf Micro-Elements */
+.laddu-orbit-layer {
+  position: absolute;
+  inset: 2%;
+  pointer-events: none;
+  will-change: transform;
+  animation: mandalaSpin 22s linear infinite;
+}
+
+/* Pause Hero GPU Animations Automatically When Hero Is Scrolled Off-Screen */
+.hero-royal.is-offscreen .laddu-mandala-ring,
+.hero-royal.is-offscreen .laddu-mandala-ring-inner,
+.hero-royal.is-offscreen .laddu-levitate-wrap,
+.hero-royal.is-offscreen .laddu-light-sweep,
+.hero-royal.is-offscreen .laddu-orbit-layer,
+.hero-royal.is-offscreen .ambient-audio-bars span {
+  animation-play-state: paused !important;
+}
+
+.orbit-gem {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-gem-1 { top: 6%; left: 52%; }
+.orbit-gem-2 { top: 46%; right: 2%; }
+.orbit-gem-3 { bottom: 7%; left: 42%; }
+.orbit-gem-4 { top: 44%; left: 3%; }
+
+/* ==========================================================================
+   Luxury Section Surfaces & Hairline Motifs
+   ========================================================================== */
+.section-royal-dark {
+  background: linear-gradient(180deg, var(--plum-900) 0%, var(--plum-800) 50%, var(--plum-900) 100%);
+  color: var(--ivory-100);
+}
+
+.section-royal-ivory {
+  background-color: var(--ivory-100);
+  color: var(--ink-plum);
+}
+
+.royal-divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--gold-royal);
+}
+
+.royal-divider-line {
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-royal), transparent);
+}
+
+.section-kicker-dark {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-cream);
+}
+
+.section-kicker-light {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--peacock-600);
+}
+
+/* ==========================================================================
+   Category Filter Tabs & Product Cards
+   ========================================================================== */
+.category-tabs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.45rem;
+  background: rgba(20, 0, 27, 0.6);
+  border: var(--border-gold-hairline);
+  border-radius: 12px;
+}
+
+.category-tab-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--gold-cream);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.6rem 1.15rem;
+  border-radius: 8px;
+  min-height: 40px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.category-tab-btn:hover {
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.category-tab-btn.is-active {
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #1e0026;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.25);
+}
+
+/* Luxury Product Card */
+.mithai-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  contain: layout style;
+  background: linear-gradient(165deg, rgba(48, 0, 62, 0.9) 0%, rgba(24, 0, 32, 0.97) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+  transition: transform 0.22s var(--ease-luxury), border-color 0.22s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mithai-card {
+    transform-style: preserve-3d;
+  }
+}
+
+.mithai-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 215, 0, 0.14) 50%, transparent 70%);
+  transform: translate3d(-120%, 0, 0);
+  transition: transform 0.7s var(--ease-luxury);
+  z-index: 2;
+}
+
+.mithai-card:hover {
+  border-color: rgba(255, 215, 0, 0.68);
+}
+
+.mithai-card:hover::before {
+  transform: translate3d(120%, 0, 0);
+}
+
+.mithai-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #3b004a, #180021);
+}
+
+.mithai-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s var(--ease-luxury);
+}
+
+.mithai-card:hover .mithai-img-wrap img {
+  transform: scale3d(1.06, 1.06, 1);
+}
+
+.img-fallback-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--gold-cream);
+  background: radial-gradient(circle at center, #3b004a 0%, #1a0024 100%);
+}
+
+.mithai-meta-line {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #3fe0ad; /* High contrast peacock-emerald on dark plum */
+}
+
+.mithai-card-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--ivory-50);
+  line-height: 1.3;
+}
+
+.mithai-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(255, 249, 240, 0.78);
+}
+
+.mithai-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+
+.mithai-pack {
+  font-size: 0.8rem;
+  color: rgba(245, 225, 164, 0.8);
+}
+
+/* ==========================================================================
+   The Art of Suvaikoodu (Ivory Contrast Split-Screen & Counters)
+   ========================================================================== */
+.craft-image-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(36, 0, 46, 0.14);
+  box-shadow: 0 20px 50px rgba(36, 0, 46, 0.14);
+  min-height: 360px;
+}
+
+.craft-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.craft-pillar-item {
+  padding-bottom: 1.15rem;
+  border-bottom: var(--border-plum-hairline);
+}
+
+.craft-pillar-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.milestone-band {
+  background: linear-gradient(135deg, #24002e 0%, #360044 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  color: var(--ivory-100);
+}
+
+.milestone-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  color: var(--gold-bright);
+  line-height: 1.1;
+}
+
+/* ==========================================================================
+   Festive & Wedding Bulk Orders Marquee + Cards
+   ========================================================================== */
+.royal-marquee-viewport {
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(20, 0, 27, 0.55);
+  padding: 0.95rem 0;
+}
+
+.royal-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 2.5rem;
+  will-change: transform;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.royal-marquee-viewport:hover .royal-marquee-track,
+.royal-marquee-viewport.is-offscreen .royal-marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold-cream);
+  letter-spacing: 0.04em;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.festive-suite-card {
+  background: rgba(30, 0, 38, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 16px;
+  padding: 1.75rem;
+  height: 100%;
+  contain: layout style;
+  transition: transform 0.2s var(--ease-luxury), border-color 0.2s ease;
+}
+
+.festive-suite-card:hover {
+  transform: translate3d(0, -4px, 0);
+  border-color: rgba(255, 215, 0, 0.65);
+}
+
+/* ==========================================================================
+   Testimonials Auto-Scrolling Track
+   ========================================================================== */
+.testimonial-marquee-viewport {
+  overflow: hidden;
+  padding: 0.5rem 0 1rem;
+}
+
+.testimonial-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  will-change: transform;
+  animation: marqueeScroll 44s linear infinite;
+}
+
+.testimonial-marquee-viewport:hover .testimonial-marquee-track,
+.testimonial-marquee-viewport:focus-within .testimonial-marquee-track,
+.testimonial-marquee-viewport.is-offscreen .testimonial-marquee-track {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  width: min(370px, 84vw);
+  flex-shrink: 0;
+  contain: layout style;
+  background: #ffffff;
+  border: 1px solid rgba(36, 0, 46, 0.1);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 30px rgba(36, 0, 46, 0.06);
+}
+
+.star-rating {
+  color: #c28e0e;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Grand Enquiry & Order Form
+   ========================================================================== */
+.enquiry-panel {
+  background: linear-gradient(160deg, rgba(46, 0, 58, 0.94) 0%, rgba(22, 0, 29, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 20px;
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.48);
+}
+
+.royal-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-cream);
+  margin-bottom: 0.4rem;
+}
+
+.royal-recent-banner {
+  background: rgba(212, 175, 55, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.48);
+  border-radius: 10px;
+  color: var(--gold-cream);
+  padding: 0.85rem 1.1rem;
+}
+
+.royal-input {
+  color-scheme: dark;
+  background-color: rgba(20, 0, 27, 0.72) !important;
+  border: 1px solid rgba(212, 175, 55, 0.34) !important;
+  color: var(--ivory-50) !important;
+  border-radius: 10px !important;
+  padding: 0.72rem 0.95rem !important;
+  font-size: 0.94rem !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.royal-input::placeholder {
+  color: rgba(245, 225, 164, 0.48) !important;
+}
+
+.royal-input:focus {
+  border-color: var(--gold-bright) !important;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.18) !important;
+}
+
+.royal-input.is-invalid {
+  border-color: #ff7b8a !important;
+}
+
+.field-error-msg {
+  font-size: 0.8rem;
+  color: #ff9ca8;
+  margin-top: 0.3rem;
+  min-height: 1.1rem;
+}
+
+/* ==========================================================================
+   Bootstrap 5 Royal Modal Overrides
+   ========================================================================== */
+.royal-modal-content {
+  background: linear-gradient(165deg, #2d003a 0%, #17001f 100%);
+  color: var(--ivory-100);
+  border: 1px solid rgba(212, 175, 55, 0.48);
+  border-radius: 18px;
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.65);
+}
+
+.royal-modal-content .btn-close {
+  filter: invert(1) sepia(1) saturate(4) hue-rotate(10deg);
+}
+
+.weight-option-btn {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(20, 0, 27, 0.65);
+  color: var(--gold-cream);
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.weight-option-btn.is-active {
+  background: var(--gold-bright);
+  color: #1e0026;
+  border-color: var(--gold-bright);
+}
+
+/* ==========================================================================
+   Royal Footer
+   ========================================================================== */
+.royal-footer {
+  background: var(--plum-950);
+  border-top: 1px solid rgba(212, 175, 55, 0.28);
+  color: rgba(255, 249, 240, 0.82);
+}
+
+.footer-link {
+  color: rgba(245, 225, 164, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.18s ease;
+}
+
+.footer-link:hover {
+  color: var(--gold-bright);
+}
+
+.footer-yjk-attribution {
+  max-width: 100%;
+}
+
+.yjk-attribution-logo {
+  height: 24px;
+  width: auto;
+  max-width: 64px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.25));
+}
+
+.yjk-attribution-text {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold-cream);
+}
+
+/* ==========================================================================
+   Reduced Motion Compliance
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .laddu-mandala-ring,
+  .laddu-mandala-ring-inner,
+  .laddu-levitate-wrap,
+  .laddu-light-sweep,
+  .laddu-orbit-layer,
+  .royal-marquee-track,
+  .testimonial-marquee-track,
+  .preloader-logo-halo,
+  .ambient-audio-btn[aria-pressed="true"] .ambient-audio-bars span {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile & Touch Scrollbar Hiding (Smooth Vertical Scroll + Zero X-Bounce)
+   ========================================================================== */
+@media (max-width: 991.98px), (pointer: coarse) {
+  html {
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior-x: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body {
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+  }
+
+  body,
+  main,
+  .modal-body,
+  .category-tabs-bar,
+  .royal-marquee-viewport,
+  .testimonial-marquee-viewport,
+  .mobile-scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+

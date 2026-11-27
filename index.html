@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suvaikoodu – A Nest of Flavours &amp; Luxury Bakery</title>
+    <meta
+      name="description"
+      content="Suvaikoodu – A Nest of Flavours. Handcrafted pure A2 Bilona ghee royal laddus, heritage Indian mithai, artisan fusion patisserie, and bespoke wedding &amp; festive hampers."
+    />
+    <meta name="theme-color" content="#1E0026" />
+
+    <!-- Open Graph / WhatsApp & Social Share Preview -->
+    <meta property="og:title" content="Suvaikoodu – A Nest of Flavours | Royal Heritage Mithai &amp; Bakery" />
+    <meta
+      property="og:description"
+      content="Discover Royal Motichoor Ghee Laddus, Imperial Kaju Katli, Saffron Rasmalai Gateaux, and custom wedding hampers crafted fresh daily."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Suvaikoodu – A Nest of Flavours" />
+    <meta
+      name="twitter:description"
+      content="Royal Heritage Indian Mithai &amp; Luxury Artisan Bakery crafted with pure A2 ghee and Kashmiri saffron."
+    />
+    <meta name="twitter:image" content="./assets/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
+
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Tailwind CSS CDN with Preflight Disabled to Prevent Bootstrap Conflicts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false
+        },
+        theme: {
+          extend: {
+            colors: {
+              plum: { 950: "#14001B", 900: "#1E0026", 800: "#290035", 700: "#360044" },
+              gold: { 300: "#F5E1A4", 400: "#FFD700", 500: "#D4AF37", 600: "#9F7918" },
+              peacock: { 500: "#00A878", 600: "#00825D" },
+              ivory: { 50: "#FFFDF8", 100: "#FFF9F0" }
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "Georgia", "serif"],
+              sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-preloader="loading">
+    <!-- ====================================================================
+         Cinematic Royal Preloader
+         ==================================================================== -->
+    <div id="royalPreloader" class="preloader-curtain" role="status" aria-label="Loading Suvaikoodu">
+      <div class="preloader-logo-halo">
+        <img
+          src="./assets/logo.png"
+          alt="Suvaikoodu – A Nest of Flavours"
+          class="preloader-logo-img"
+          decoding="async"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+      <div class="preloader-progress-track" aria-hidden="true">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         Glassmorphic Sticky Navbar (3-Zone Top Bar Contract)
+         ==================================================================== -->
+    <header id="royalNavbar" class="royal-navbar">
+      <div class="container py-2.5">
+        <div class="d-flex align-items-center justify-content-between gap-4">
+          <!-- Zone 1: Brand Mark & Wordmark -->
+          <a
+            href="#hero"
+            class="d-inline-flex align-items-center gap-2.5 text-decoration-none text-nowrap flex-shrink-0"
+            aria-label="Suvaikoodu Home"
+          >
+            <img
+              src="./assets/logo.png"
+              alt="Suvaikoodu Emblem"
+              class="brand-logo-thumb"
+              decoding="async"
+              referrerpolicy="no-referrer"
+            />
+            <span class="font-display fs-4 fw-bold text-gold-gradient text-nowrap">Suvaikoodu</span>
+          </a>
+
+          <!-- Zone 2: Desktop Navigation Links -->
+          <nav class="d-none d-lg-flex align-items-center gap-4" aria-label="Primary Navigation">
+            <a href="#collection" class="nav-gold-link text-nowrap">Creations</a>
+            <a href="#craftsmanship" class="nav-gold-link text-nowrap">Craftsmanship</a>
+            <a href="#hampers" class="nav-gold-link text-nowrap">Hampers</a>
+            <a href="#testimonials" class="nav-gold-link text-nowrap">Testimonials</a>
+            <a href="#enquiry" class="nav-gold-link text-nowrap">Enquire</a>
+          </nav>
+
+          <!-- Zone 3: Single Primary Action & Mobile Drawer Trigger -->
+          <div class="d-flex align-items-center gap-2 flex-shrink-0">
+            <a href="#enquiry" class="btn-royal-gold btn-magnetic d-none d-sm-inline-flex text-nowrap py-2 px-3">
+              Quick Enquiry
+            </a>
+            <button
+              class="btn btn-outline-warning d-lg-none px-2.5 py-2 border-opacity-50"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mobileNavDrawer"
+              aria-controls="mobileNavDrawer"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Collapse -->
+      <div id="mobileNavDrawer" class="collapse mobile-nav-drawer d-lg-none">
+        <nav class="container py-3 d-flex flex-column" aria-label="Mobile Navigation">
+          <a href="#collection" class="mobile-nav-link">Royal Creations</a>
+          <a href="#craftsmanship" class="mobile-nav-link">Art of Suvaikoodu</a>
+          <a href="#hampers" class="mobile-nav-link">Festive &amp; Wedding Hampers</a>
+          <a href="#testimonials" class="mobile-nav-link">Patron Reviews</a>
+          <a href="#enquiry" class="mobile-nav-link border-0 text-warning fw-semibold">Quick Enquiry</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==================================================================
+           Grand Hero Section & Centerpiece Animated Royal Laddu
+           ================================================================== -->
+      <section id="hero" class="hero-royal">
+        <canvas id="saffronCanvas" class="hero-particle-canvas" data-testid="saffron-canvas" aria-hidden="true"></canvas>
+
+        <div class="container hero-content-layer">
+          <div class="row align-items-center gy-4 gy-lg-5">
+            <!-- Left Column: Kinetic Typography & CTAs -->
+            <div class="col-lg-6 text-center text-lg-start">
+              <p class="hero-kicker hero-stagger mb-2 mb-lg-3">
+                Royal Heritage Mithai · Artisan Patisserie
+              </p>
+
+              <h1 class="hero-title text-gold-gradient hero-stagger mb-1 mb-lg-2">
+                Suvaikoodu
+              </h1>
+              <p class="hero-tagline hero-stagger mb-3 mb-lg-4">
+                A Nest of Flavours
+              </p>
+
+              <p class="hero-lead hero-stagger mx-auto mx-lg-0 mb-4">
+                Hand-rolled every dawn in hammered copper kadais with pure A2 Bilona ghee, Pampore Kashmiri saffron,
+                and single-origin nuts—crafted for India’s grandest weddings, festivals, and cherished tables.
+              </p>
+
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 gap-sm-3 hero-stagger mb-4 mb-lg-5">
+                <a href="#collection" class="btn-royal-gold btn-magnetic text-nowrap">
+                  Explore Royal Sweets
+                </a>
+                <a href="#hampers" class="btn-royal-outline text-nowrap">
+                  Order Festive Hampers
+                </a>
+              </div>
+
+              <div class="hero-meta-strip d-flex flex-wrap justify-content-center justify-content-lg-start gap-x-4 gap-y-1 gap-sm-3 gap-lg-4 hero-stagger mb-3 mb-lg-4">
+                <span>100% Pure A2 Bilona Ghee</span>
+                <span class="d-none d-sm-inline" aria-hidden="true">·</span>
+                <span>Zero Artificial Essence</span>
+                <span class="d-none d-sm-inline" aria-hidden="true">·</span>
+                <span>Fresh Dawn Batches</span>
+              </div>
+
+              <div class="d-flex justify-content-center justify-content-lg-start hero-stagger">
+                <button
+                  type="button"
+                  id="ambientAudioToggle"
+                  class="ambient-audio-btn text-nowrap"
+                  aria-pressed="false"
+                  aria-label="Toggle ambient temple soundscape"
+                >
+                  <span class="ambient-audio-bars" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </span>
+                  <span id="ambientAudioLabel">Temple Soundscape: Off</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Column: Centerpiece Animated Royal Laddu Showcase -->
+            <div class="col-lg-6">
+              <div id="heroLadduStage" class="laddu-showcase-stage" data-testid="hero-laddu-stage">
+                <div class="laddu-ambient-glow" aria-hidden="true"></div>
+
+                <!-- Rotating Outer Golden Mandala Ring SVG -->
+                <svg class="laddu-mandala-ring" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="mandalaGold" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.95" />
+                      <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.45" />
+                      <stop offset="100%" stop-color="#F5E1A4" stop-opacity="0.9" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="200" cy="200" r="192" stroke="url(#mandalaGold)" stroke-width="1.2" stroke-dasharray="6 8" />
+                  <circle cx="200" cy="200" r="176" stroke="url(#mandalaGold)" stroke-width="0.9" stroke-opacity="0.6" />
+                  <!-- 12 Sacred Geometry Diamond Markers -->
+                  <g fill="#FFD700" fill-opacity="0.85">
+                    <polygon points="200,3 204,11 200,19 196,11" />
+                    <polygon points="200,381 204,389 200,397 196,389" />
+                    <polygon points="3,200 11,196 19,200 11,204" />
+                    <polygon points="381,200 389,196 397,200 389,204" />
+                    <circle cx="336" cy="64" r="3" />
+                    <circle cx="64" cy="336" r="3" />
+                    <circle cx="64" cy="64" r="3" />
+                    <circle cx="336" cy="336" r="3" />
+                  </g>
+                </svg>
+
+                <!-- Counter-Rotating Inner Halo Ring SVG -->
+                <svg class="laddu-mandala-ring-inner" viewBox="0 0 320 320" fill="none" aria-hidden="true">
+                  <circle cx="160" cy="160" r="154" stroke="#F5E1A4" stroke-opacity="0.38" stroke-width="1" stroke-dasharray="2 10" />
+                </svg>
+
+                <!-- Orbiting Saffron, Pistachio & Gold Leaf Micro-Elements -->
+                <div class="laddu-orbit-layer" aria-hidden="true">
+                  <!-- Saffron strand -->
+                  <span class="orbit-gem orbit-gem-1">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 17C10 15 14 9 19 6" stroke="#FF5E1A" stroke-width="2.4" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <!-- Pistachio flake -->
+                  <span class="orbit-gem orbit-gem-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <ellipse cx="12" cy="12" rx="7" ry="4" transform="rotate(-28 12 12)" fill="#7AD46A" stroke="#00A878" stroke-width="1" />
+                    </svg>
+                  </span>
+                  <!-- Gold leaf flake -->
+                  <span class="orbit-gem orbit-gem-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" fill="#FFD700" />
+                    </svg>
+                  </span>
+                  <!-- Second saffron curl -->
+                  <span class="orbit-gem orbit-gem-4">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 8C11 10 14 14 18 18" stroke="#E84C22" stroke-width="2.2" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </div>
+
+                <!-- Levitating & Mouse-Tilt 3D Laddu Frame -->
+                <div id="heroLadduTilt" class="laddu-levitate-wrap">
+                  <div class="laddu-photo-frame">
+                    <img
+                      src="./src/assets/images/hero_royal_laddu_1795513948761.jpg"
+                      alt="Signature Royal Motichoor Ghee Laddu garnished with Kashmiri saffron, pistachios, and 24K gold leaf"
+                      class="laddu-photo"
+                      loading="eager"
+                      decoding="async"
+                      fetchpriority="high"
+                      referrerpolicy="no-referrer"
+                    />
+                    <div class="laddu-light-sweep" aria-hidden="true"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           Signature Laddu & Royal Sweets Collection
+           ================================================================== -->
+      <section id="collection" class="section-royal-dark py-5">
+        <div class="container py-lg-5">
+          <div class="text-center mb-4">
+            <p class="section-kicker-dark mb-2">Curated Daily Atelier</p>
+            <h2 class="display-5 fw-bold text-gold-gradient mb-3">
+              Signature Laddu &amp; Royal Sweets
+            </h2>
+            <p class="mx-auto text-light text-opacity-75 mb-4" style="max-width: 60ch;">
+              Every creation is prepared in small morning batches—balancing slow-caramelized purity with contemporary luxury presentation.
+            </p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="d-flex flex-column align-items-center gap-3 mb-5">
+            <div class="category-tabs-bar" role="tablist" aria-label="Sweet and bakery categories">
+              <button
+                type="button"
+                class="category-tab-btn is-active"
+                role="tab"
+                aria-selected="true"
+                data-category="All"
+              >
+                All Creations
+              </button>
+              <button
+                type="button"
+                class="category-tab-btn"
+                role="tab"
+                aria-selected="false"
+                data-category="Royal Laddus"
+              >
+                Royal Laddus
+              </button>
+              <button
+                type="button"
+                class="category-tab-btn"
+                role="tab"
+                aria-selected="false"
+                data-category="Heritage Mithai"
+              >
+                Heritage Mithai
+              </button>
+              <button
+                type="button"
+                class="category-tab-btn"
+                role="tab"
+                aria-selected="false"
+                data-category="Artisan Bakery & Cakes"
+              >
+                Artisan Bakery &amp; Cakes
+              </button>
+              <button
+                type="button"
+                class="category-tab-btn"
+                role="tab"
+                aria-selected="false"
+                data-category="Luxury Gift Hampers"
+              >
+                Luxury Gift Hampers
+              </button>
+            </div>
+            <div id="collectionCountLabel" class="small text-warning text-opacity-75 tabular-nums">
+              8 Creations
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div
+            id="collectionGrid"
+            data-testid="collection-grid"
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4"
+          ></div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           The Art of Suvaikoodu (Warm Ivory Craftsmanship Split-Screen)
+           ================================================================== -->
+      <section id="craftsmanship" class="section-royal-ivory py-5">
+        <div class="container py-lg-5">
+          <div class="row align-items-stretch g-5 mb-5">
+            <!-- Parallax Atelier Photo -->
+            <div class="col-lg-6">
+              <div class="craft-image-frame h-100">
+                <img
+                  src="./src/assets/images/craft_copper_kadai_atelier_1795513952871.jpg"
+                  alt="Master halwai slow-roasting golden boondi pearls in a hammered copper kadai with pure A2 ghee and Kashmiri saffron"
+                  class="craft-parallax-img"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            <!-- Craftsmanship Story -->
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+              <p class="section-kicker-light mb-2">The Art of Suvaikoodu</p>
+              <h2 class="display-6 fw-bold mb-3" style="color: var(--ink-plum);">
+                Patience Measured in Golden Flames &amp; Pure A2 Ghee
+              </h2>
+              <p class="mb-4" style="color: var(--ink-muted); line-height: 1.7;">
+                True South Indian and royal palace mithai cannot be rushed by industrial mixers. Inside our kitchen,
+                every batch begins before sunrise with single-origin ingredients and quiet reverence for heirloom craft.
+              </p>
+
+              <div class="d-flex flex-column gap-3">
+                <div class="craft-pillar-item">
+                  <h3 class="h5 fw-bold mb-1" style="color: var(--ink-plum);">
+                    01. Churned A2 Bilona Cow Ghee
+                  </h3>
+                  <p class="mb-0 small" style="color: var(--ink-muted); line-height: 1.6;">
+                    Cultured from curd rather than cream for an unmistakable nutty aroma and clean, melt-in-mouth richness.
+                  </p>
+                </div>
+
+                <div class="craft-pillar-item">
+                  <h3 class="h5 fw-bold mb-1" style="color: var(--ink-plum);">
+                    02. Grade-A Pampore Kashmiri Saffron
+                  </h3>
+                  <p class="mb-0 small" style="color: var(--ink-muted); line-height: 1.6;">
+                    Whole crimson stigmas steeped gently in warm milk and cardamom syrup—never synthetic food color or essence.
+                  </p>
+                </div>
+
+                <div class="craft-pillar-item">
+                  <h3 class="h5 fw-bold mb-1" style="color: var(--ink-plum);">
+                    03. Hand-Rolled &amp; Baked Fresh Every Morning
+                  </h3>
+                  <p class="mb-0 small" style="color: var(--ink-muted); line-height: 1.6;">
+                    Both our traditional mithai and fusion patisserie cakes leave our ovens and brass trays the very day you celebrate.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Milestone Counter Band -->
+          <div class="milestone-band p-4 p-lg-5">
+            <div class="row text-center g-4">
+              <div class="col-6 col-lg-3">
+                <div class="milestone-number tabular-nums" data-counter-target="28" data-counter-suffix="+">28+</div>
+                <div class="small text-warning text-opacity-75 mt-1">Heirloom Recipes</div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="milestone-number tabular-nums" data-counter-target="12" data-counter-suffix="">12</div>
+                <div class="small text-warning text-opacity-75 mt-1">Fresh Small Batches Daily</div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="milestone-number tabular-nums" data-counter-target="18500" data-counter-suffix="+">18,500+</div>
+                <div class="small text-warning text-opacity-75 mt-1">Celebrations Sweetened</div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="milestone-number tabular-nums" data-counter-target="100" data-counter-suffix="%">100%</div>
+                <div class="small text-warning text-opacity-75 mt-1">Pure A2 Ghee Guarantee</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           Festive & Wedding Bulk Orders Showcase
+           ================================================================== -->
+      <section id="hampers" class="section-royal-dark py-5">
+        <div class="container py-lg-5 pb-4">
+          <div class="row align-items-end g-4 mb-4">
+            <div class="col-lg-8">
+              <p class="section-kicker-dark mb-2">Bespoke Gifting &amp; Trousseau</p>
+              <h2 class="display-5 fw-bold text-gold-gradient mb-2">
+                Festive &amp; Wedding Bulk Hampers
+              </h2>
+              <p class="text-light text-opacity-75 mb-0" style="max-width: 58ch;">
+                Custom gold-embossed velvet chests, brass tambulam keepsakes, and corporate Diwali collections tailored with your family crest or brand monogram.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <button
+                type="button"
+                class="btn-royal-gold"
+                data-prefill-type="Wedding Bulk Order"
+                data-prefill-item="Royal Tambulam Wedding Suite"
+                data-prefill-qty="100 Boxes"
+              >
+                Request Custom Quote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Marquee Strip -->
+        <div class="royal-marquee-viewport mb-5" aria-label="Bespoke gifting specialties">
+          <div class="royal-marquee-track">
+            <span class="marquee-item">Diwali Velvet Treasure Boxes</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">South Indian Wedding Tambulam Suites</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">Corporate Gold-Monogrammed Hampers</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">Baby Naming &amp; Housewarming Laddus</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">Diwali Velvet Treasure Boxes</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">South Indian Wedding Tambulam Suites</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">Corporate Gold-Monogrammed Hampers</span>
+            <span class="marquee-item text-warning" aria-hidden="true">✦</span>
+            <span class="marquee-item">Baby Naming &amp; Housewarming Laddus</span>
+          </div>
+        </div>
+
+        <!-- Three Curated Gifting Suites -->
+        <div class="container pb-lg-4">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="festive-suite-card d-flex flex-column">
+                <div class="mithai-meta-line mb-2">Weddings · Min. 25 Boxes</div>
+                <h3 class="h4 fw-bold text-ivory-50 mb-2">Royal Tambulam Trousseau</h3>
+                <p class="small text-light text-opacity-75 mb-4 flex-grow-1" style="line-height: 1.65;">
+                  Hand-wrapped silk-finish keepsakes featuring Motichoor Laddus, Mysore Pak, and personalized invitation inserts.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-warning border-opacity-25">
+                  <span class="fw-bold text-warning tabular-nums">From ₹1,450 / box</span>
+                  <button
+                    type="button"
+                    class="btn-royal-outline py-1.5 px-3 small"
+                    data-prefill-type="Wedding Bulk Order"
+                    data-prefill-item="Royal Tambulam Wedding Suite"
+                    data-prefill-qty="50 Wedding Boxes"
+                  >
+                    Configure
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="festive-suite-card d-flex flex-column">
+                <div class="mithai-meta-line mb-2">Diwali &amp; Corporate · Pan-India</div>
+                <h3 class="h4 fw-bold text-ivory-50 mb-2">Maharani Diwali Chest</h3>
+                <p class="small text-light text-opacity-75 mb-4 flex-grow-1" style="line-height: 1.65;">
+                  Imperial plum velvet box with embossed filigree, Kaju Katli, dry fruit laddus, spiced cashews, and a hand-cast brass diya.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-warning border-opacity-25">
+                  <span class="fw-bold text-warning tabular-nums">From ₹2,400 / chest</span>
+                  <button
+                    type="button"
+                    class="btn-royal-outline py-1.5 px-3 small"
+                    data-prefill-type="Festive Hamper"
+                    data-prefill-item="Maharani Velvet Festive Hamper"
+                    data-prefill-qty="30 Corporate Chests"
+                  >
+                    Configure
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="festive-suite-card d-flex flex-column">
+                <div class="mithai-meta-line mb-2">Milestone Celebrations</div>
+                <h3 class="h4 fw-bold text-ivory-50 mb-2">Bespoke Fusion Celebration Cakes</h3>
+                <p class="small text-light text-opacity-75 mb-4 flex-grow-1" style="line-height: 1.65;">
+                  Multi-tiered Saffron Rasmalai, Rose Pistachio, and Filter Coffee Praline cakes sculpted for sangeets and anniversaries.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-warning border-opacity-25">
+                  <span class="fw-bold text-warning tabular-nums">From ₹1,950 / kg</span>
+                  <button
+                    type="button"
+                    class="btn-royal-outline py-1.5 px-3 small"
+                    data-prefill-type="Custom Cake"
+                    data-prefill-item="Saffron Rasmalai Pistachio Gateau"
+                    data-prefill-qty="3 kg Two-Tier"
+                  >
+                    Configure
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           Testimonials & Ambience Showcase (Warm Ivory)
+           ================================================================== -->
+      <section id="testimonials" class="section-royal-ivory py-5">
+        <div class="container pt-lg-4 mb-4 text-center">
+          <p class="section-kicker-light mb-2">Patron Notes</p>
+          <h2 class="display-6 fw-bold mb-2" style="color: var(--ink-plum);">
+            Cherished Across Celebrations
+          </h2>
+          <p class="mx-auto mb-0" style="color: var(--ink-muted); max-width: 56ch;">
+            Words from families, wedding planners, and corporate hosts who entrusted their milestones to Suvaikoodu.
+          </p>
+        </div>
+
+        <div class="testimonial-marquee-viewport" aria-label="Customer testimonials">
+          <div class="testimonial-marquee-track">
+            <article class="testimonial-card">
+              <div class="star-rating mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “We ordered 220 Royal Tambulam boxes for our daughter’s wedding in Coimbatore. Every guest asked where the Motichoor Laddus came from—zero excess sugar and unmistakably pure A2 ghee.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Meenakshi Sundaram</div>
+              <div class="small" style="color: var(--ink-muted);">Mother of the Bride · Coimbatore</div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="star-rating mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “Our Diwali client gifting shifted completely to Suvaikoodu’s Maharani Velvet Chests. The brass diya and saffron Kaju Barfi arrived in pristine condition across 80 Bengaluru addresses.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Arvind Rajagopalan</div>
+              <div class="small" style="color: var(--ink-muted);">Managing Partner, Dakshin Ventures · Bengaluru</div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="star-rating mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “The Saffron Rasmalai Pistachio Gateau was the centerpiece of my parents’ 40th anniversary dinner. Light, aromatic cardamom sponge without feeling heavy.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Nandini Krishnamurthy</div>
+              <div class="small" style="color: var(--ink-muted);">Architect · Chennai</div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="star-rating mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “Their Ghee Mysore Pak melts the instant it touches your tongue. You can taste the slow-roasted gram flour and authentic Madurai cardamom in every bite.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Karthik Subramanian</div>
+              <div class="small" style="color: var(--ink-muted);">Hospitality Consultant · Mysuru</div>
+            </article>
+
+            <!-- Duplicated set for seamless infinite CSS marquee -->
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="star-rating mb-2">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “We ordered 220 Royal Tambulam boxes for our daughter’s wedding in Coimbatore. Every guest asked where the Motichoor Laddus came from—zero excess sugar and unmistakably pure A2 ghee.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Meenakshi Sundaram</div>
+              <div class="small" style="color: var(--ink-muted);">Mother of the Bride · Coimbatore</div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="star-rating mb-2">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “Our Diwali client gifting shifted completely to Suvaikoodu’s Maharani Velvet Chests. The brass diya and saffron Kaju Barfi arrived in pristine condition across 80 Bengaluru addresses.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Arvind Rajagopalan</div>
+              <div class="small" style="color: var(--ink-muted);">Managing Partner, Dakshin Ventures · Bengaluru</div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="star-rating mb-2">★★★★★</div>
+              <p class="mb-3 small" style="color: var(--ink-plum); line-height: 1.65;">
+                “The Saffron Rasmalai Pistachio Gateau was the centerpiece of my parents’ 40th anniversary dinner. Light, aromatic cardamom sponge without feeling heavy.”
+              </p>
+              <div class="fw-bold small" style="color: var(--ink-plum);">Nandini Krishnamurthy</div>
+              <div class="small" style="color: var(--ink-muted);">Architect · Chennai</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           Grand Enquiry & Order Form (Google Apps Script Integrated)
+           ================================================================== -->
+      <section id="enquiry" class="section-royal-dark py-5">
+        <div class="container py-lg-5">
+          <div class="row justify-content-center">
+            <div class="col-xl-10">
+              <div class="enquiry-panel p-4 p-md-5">
+                <div class="text-center mb-4">
+                  <p class="section-kicker-dark mb-2">Concierge &amp; Custom Orders</p>
+                  <h2 class="display-6 fw-bold text-gold-gradient mb-2">
+                    Reserve Your Royal Sweets &amp; Hampers
+                  </h2>
+                  <p class="text-light text-opacity-75 mx-auto mb-0" style="max-width: 58ch;">
+                    Share your celebration date, preferred creations, and box quantity. Our gifting concierge responds within 2 business hours.
+                  </p>
+                </div>
+
+                <div
+                  id="recentEnquiryBanner"
+                  class="royal-recent-banner small d-none mb-4"
+                  role="status"
+                ></div>
+
+                <div
+                  id="enquiryServerError"
+                  class="alert alert-danger d-none mb-4"
+                  role="alert"
+                ></div>
+
+                <form id="suvaikooduEnquiryForm" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="fullName" class="form-label royal-label">Full Name *</label>
+                      <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        class="form-control royal-input"
+                        placeholder="e.g., Ananya Natarajan"
+                        required
+                      />
+                      <div id="fullNameError" class="field-error-msg" aria-live="polite"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="phone" class="form-label royal-label">Phone / WhatsApp Number *</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="form-control royal-input"
+                        placeholder="e.g., +91 98400 12345"
+                        required
+                      />
+                      <div id="phoneError" class="field-error-msg" aria-live="polite"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="email" class="form-label royal-label">Email Address *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control royal-input"
+                        placeholder="e.g., ananya@example.com"
+                        required
+                      />
+                      <div id="emailError" class="field-error-msg" aria-live="polite"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="enquiryType" class="form-label royal-label">Enquiry Type *</label>
+                      <select id="enquiryType" name="enquiryType" class="form-select royal-input" required>
+                        <option value="Wedding Bulk Order">Wedding Bulk Order</option>
+                        <option value="Festive Hamper">Festive Hamper</option>
+                        <option value="Custom Cake">Custom Cake</option>
+                        <option value="Regular Order">Regular Order</option>
+                      </select>
+                      <div id="enquiryTypeError" class="field-error-msg" aria-live="polite"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="preferredItem" class="form-label royal-label">Preferred Sweet / Item</label>
+                      <input
+                        type="text"
+                        id="preferredItem"
+                        name="preferredItem"
+                        class="form-control royal-input"
+                        placeholder="e.g., Royal Motichoor Ghee Laddu"
+                      />
+                    </div>
+
+                    <div class="col-md-3">
+                      <label for="quantityBudget" class="form-label royal-label">Quantity / Budget</label>
+                      <input
+                        type="text"
+                        id="quantityBudget"
+                        name="quantityBudget"
+                        class="form-control royal-input"
+                        placeholder="e.g., 50 boxes or ₹25,000"
+                      />
+                    </div>
+
+                    <div class="col-md-3">
+                      <label for="eventDate" class="form-label royal-label">Event / Delivery Date</label>
+                      <input
+                        type="date"
+                        id="eventDate"
+                        name="eventDate"
+                        class="form-control royal-input"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="message" class="form-label royal-label">Customisation Notes &amp; Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="3"
+                        class="form-control royal-input"
+                        placeholder="Tell us about dietary preferences, monogram inserts, or delivery city..."
+                      ></textarea>
+                    </div>
+
+                    <div class="col-12 pt-2 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+                      <span class="small text-warning text-opacity-75">
+                        Handcrafted fresh to order · Pan-India insured hamper dispatch available
+                      </span>
+                      <button
+                        type="submit"
+                        id="enquirySubmitBtn"
+                        class="btn-royal-gold btn-magnetic px-4 py-2.5"
+                      >
+                        <span
+                          id="enquirySubmitSpinner"
+                          class="spinner-border spinner-border-sm d-none"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                        <span id="enquirySubmitText">Submit Royal Enquiry</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         Royal Footer
+         ==================================================================== -->
+    <footer class="royal-footer py-5">
+      <div class="container">
+        <div class="row g-4 pb-4 border-bottom border-warning border-opacity-25">
+          <div class="col-lg-5">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img
+                src="./assets/logo.png"
+                alt="Suvaikoodu Official Crest"
+                class="brand-logo-thumb brand-logo-thumb-footer"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              />
+              <div>
+                <div class="font-display fs-4 fw-bold text-gold-gradient">Suvaikoodu</div>
+                <div class="font-display fst-italic small text-warning text-opacity-75">A Nest of Flavours</div>
+              </div>
+            </div>
+            <p class="small mb-0" style="max-width: 44ch; line-height: 1.65;">
+              Royal heritage Indian mithai and luxury artisan bakery—crafted daily with A2 Bilona ghee, Pampore saffron, and heirloom warmth.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <h3 class="h6 fw-bold text-warning mb-3">Explore</h3>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+              <li><a href="#collection" class="footer-link">Signature Laddus &amp; Mithai</a></li>
+              <li><a href="#craftsmanship" class="footer-link">Art of Suvaikoodu</a></li>
+              <li><a href="#hampers" class="footer-link">Wedding &amp; Festive Hampers</a></li>
+              <li><a href="#enquiry" class="footer-link">Bulk &amp; Custom Enquiry</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-4">
+            <h3 class="h6 fw-bold text-warning mb-3">Flagship Atelier &amp; Timings</h3>
+            <p class="small mb-2">
+              42 East Lokamanya Street, RS Puram, Coimbatore · 12th Main Indiranagar, Bengaluru
+            </p>
+            <p class="small mb-3 text-warning text-opacity-75">
+              Open Daily · 9:00 AM – 9:30 PM IST
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#enquiry" class="footer-link" aria-label="Instagram Suvaikoodu">Instagram</a>
+              <span aria-hidden="true">·</span>
+              <a href="#enquiry" class="footer-link" aria-label="WhatsApp Concierge">WhatsApp Concierge</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 d-flex flex-column gap-3">
+          <div class="footer-yjk-attribution d-flex justify-content-center align-items-center">
+            <div class="yjk-attribution-inner d-inline-flex align-items-center justify-content-center gap-2 flex-wrap text-center">
+              <img
+                src="./assets/yjk-logo.png"
+                alt="YJK Technologies emblem"
+                class="yjk-attribution-logo"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="if(!this.dataset.fallbackTried){this.dataset.fallbackTried='1';this.src='./assets/aistudio/logo_ab0e4ff8.PNG';}else{this.style.display='none';if(this.nextElementSibling){this.nextElementSibling.classList.remove('d-none');}}"
+              />
+              <span class="yjk-logo-fallback d-none" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <polygon points="12,3 22,20 2,20" stroke="#D4AF37" stroke-width="1.8" fill="rgba(212,175,55,0.14)" />
+                </svg>
+              </span>
+              <span class="yjk-attribution-text">Powered by YJK Technologies</span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small text-warning text-opacity-75 text-center text-sm-start">
+            <span>&copy; 2026 Suvaikoodu – A Nest of Flavours. All rights reserved.</span>
+            <span>Pure A2 Ghee · Handcrafted Heritage</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         Bootstrap 5 Quick-View Modal
+         ==================================================================== -->
+    <div
+      class="modal fade"
+      id="sweetQuickViewModal"
+      tabindex="-1"
+      aria-labelledby="modalProductTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content royal-modal-content">
+          <div class="modal-header border-bottom border-warning border-opacity-25 px-4 py-3">
+            <span id="modalProductMeta" class="mithai-meta-line"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close Quick View"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-6">
+                <div class="rounded-3 overflow-hidden border border-warning border-opacity-25" style="aspect-ratio: 4/3;">
+                  <img
+                    id="modalProductImg"
+                    src="./src/assets/images/hero_royal_laddu_1795513948761.jpg"
+                    alt="Selected Sweet"
+                    class="w-100 h-100 object-fit-cover"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3 id="modalProductTitle" class="font-display h3 fw-bold text-gold-gradient mb-2"></h3>
+                <p id="modalProductDesc" class="small text-light text-opacity-75 mb-3" style="line-height: 1.6;"></p>
+
+                <div class="mb-3">
+                  <div class="small fw-semibold text-warning mb-2">Select Pack / Weight</div>
+                  <div id="modalWeightOptions" class="d-flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="small mb-2">
+                  <span class="text-warning fw-semibold">Key Ingredients: </span>
+                  <span id="modalProductIngredients" class="text-light text-opacity-75"></span>
+                </div>
+                <div class="small mb-4">
+                  <span class="text-warning fw-semibold">Freshness: </span>
+                  <span id="modalProductShelf" class="text-light text-opacity-75"></span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-3 border-top border-warning border-opacity-25">
+                  <div>
+                    <div class="small text-warning text-opacity-75">Price</div>
+                    <div id="modalProductPrice" class="h4 fw-bold text-warning mb-0 tabular-nums"></div>
+                  </div>
+                  <button type="button" id="modalEnquireItemBtn" class="btn-royal-gold">
+                    Enquire This Item
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         Bootstrap 5 Enquiry Confirmation Modal
+         ==================================================================== -->
+    <div
+      class="modal fade"
+      id="enquiryConfirmModal"
+      tabindex="-1"
+      aria-labelledby="enquiryConfirmTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content royal-modal-content text-center p-4">
+          <div class="modal-body">
+            <div class="mb-3">
+              <img
+                src="./assets/logo.png"
+                alt="Suvaikoodu"
+                style="height: 54px; border-radius: 10px;"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <h3 id="enquiryConfirmTitle" class="font-display h4 fw-bold text-gold-gradient mb-2">
+              Royal Enquiry Received
+            </h3>
+            <p class="small text-warning mb-2">
+              Reference: <strong id="confirmRefCode" class="tabular-nums"></strong>
+            </p>
+            <p id="confirmSummaryText" class="small text-light text-opacity-85 mb-4" style="line-height: 1.65;"></p>
+            <button type="button" class="btn-royal-gold px-4" data-bs-dismiss="modal">
+              Continue Exploring
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Luxury Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+      <div
+        id="royalToast"
+        class="toast royal-modal-content border-warning"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-transparent text-warning border-bottom border-warning border-opacity-25">
+          <strong class="me-auto font-display">Suvaikoodu Concierge</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body small">
+          Your enquiry has been logged and our team will reach out shortly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- GSAP 3 + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- Vanilla-Tilt 3D Card Tilt -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+    <!-- Suvaikoodu Main Application Script -->
+    <script src="./script.js" defer></script>
+  </body>
+</html>

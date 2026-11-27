@@ -1,0 +1,6 @@
+{
+  "name": "Suvaikoodu – A Nest of Flavours",
+  "description": "Royal Heritage Indian Mithai & Luxury Artisan Bakery showcasing handcrafted pure A2 ghee laddus, heritage sweets, fusion patisserie, and bespoke festive hampers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
